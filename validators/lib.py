@@ -6,11 +6,11 @@
 
 import re
 
-def getUserEmail():
+def getNumberAuto():
 
-    user_input = input(?)
+    user_input = input()
 
-    if (re.match(r"?", user_input) ):
+    if (re.match(r"/\w{2}\d{4}/gm", user_input) ):
         return user_input
     else:
         return False
@@ -21,8 +21,13 @@ def getUserEmail():
     Правило валідації
 """
 
-def getProductName():
-    #TODO
+def getCompetition(dataset):
+
+    user_input = input()
+    if (re.match(r"/\w+\s{1}\w/gm", user_input) ):
+        return user_input
+    else:
+        return False
 
 
 
@@ -32,5 +37,10 @@ def getProductName():
 """
 
 
-def getProductPrice():
-    #TODO
+def getScore():
+
+    user_input = input()
+    if (re.match(r"/\d+\.\d+", user_input)):
+        return user_input
+    else:
+        return False

@@ -7,17 +7,31 @@ from task1 import *
 
 
 #product_list - словник з dataset, що зберігає товар та список його покупок (цін)
-def recursionByProducts(user_email, product_list, amount_of_money = 0):
-    #TODO
+def recursionByCompetition(Number, Competititon, Score = 0):
+
+    if Competititon == []:
+        return Score
+    Score = sum(dataset[Number][Competititon[0]])
+
+    return recursionByCompetition(Number, Competititon[1:], Score)
 
 
-def recursionByUsers(user_emails = list(dataset.keys()), result_dict = dict()):
-    #TODO
+
+def recursionByNumber(Numbers = list(dataset.keys()), result_dict = dict()):
+
+    if Numbers == []:
+        return result_dict
+
+    Number = Numbers[0]
+    Competition = list(dataset[Number].keys())
+    Score = recursionByCompetition(Number, Competition)
+    result_dict[Number] = Score
+    return recursionByNumber(Numbers[1:], result_dict)
 
 
 print("Task 3")
 
-result = recursionByUsers()
+result = recursionByNumber()
 print(result)
 
 print("\n\n")
